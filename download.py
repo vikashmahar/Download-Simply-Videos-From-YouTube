@@ -72,8 +72,8 @@ def download_youtube_content(url: str, output_path: Optional[str] = None) -> Non
 if __name__ == "__main__":
     # Example usage
     url = input("Enter the YouTube URL (video or playlist): ")
-    output_dir = input("Enter output directory (press Enter for default): ").strip()
-    
+    output_dir = input("Enter output directory: ").strip()
+
     if output_dir:
         download_youtube_content(url, output_dir)
     else:
