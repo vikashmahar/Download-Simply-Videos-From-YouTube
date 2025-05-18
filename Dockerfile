@@ -14,5 +14,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg
 # Install Python dependencies
 RUN pip install -r requirements.txt
 
-#entry point for running the application
-CMD ["python", "download.py"]
+# Use bash to run the script
+CMD ["/bin/bash", "/app/dockerrun.sh"]

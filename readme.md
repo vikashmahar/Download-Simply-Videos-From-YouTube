@@ -6,13 +6,16 @@
 
 This python program not only downloads YouTube content in the highest available quality but also handles multiple formats, subtitles, and thumbnails efficiently. Perfect for content creators and educational purposes! 
 
-- [⚙️ Requirements](#%EF%B8%8F-requirements)
-- [📦 Installation](#-installation)
-- [🪄 Usage](#-usage)
-- [🛠️ Configuration](#%EF%B8%8F-configuration)
-- [👨‍🍳 Who is the creator?](#-who-created-this)
-- [🤝 Contributing](#-contributing)
-- [⚖️ License](#%EF%B8%8F-license)
+- [📥 Download Any Videos From YouTube](#-download-any-videos-from-youtube)
+  - [⚙️ Requirements](#️-requirements)
+  - [📦 Installation](#-installation)
+  - [🪄 Usage](#-usage)
+  - [Docker Instructions](#docker-instructions)
+  - [🛠️ Configuration](#️-configuration)
+  - [👨‍🍳 Who cooked this?](#-who-cooked-this)
+  - [🤝 Contributing](#-contributing)
+  - [⚖️ License](#️-license)
+  - [⚠️ Disclaimer](#️-disclaimer)
 
 ## ⚙️ Requirements
 * [Python v3.7](https://www.python.org/downloads/) or higher 🐍
@@ -62,13 +65,12 @@ python download.py
 
 ## Docker Instructions
 
-if you prefer to run this inside docker. 
+if you prefer to run this inside docker.
 
 Steps to Run:
 
-Build the Docker Image:
-
-1. Navigate to the repository directory in your terminal and build the Docker image using the provided Dockerfile:
+1. once you have cloned the repository. Build the Docker Image:
+Navigate to the repository directory in your terminal and build the Docker image using the provided Dockerfile:
 
 ```Bash
 docker build -t youtube-downloader .
@@ -97,17 +99,25 @@ The downloader will then proceed to download the video(s) to the specified locat
 Stopping the Container (Optional):
 Once the download is complete, you can stop the running container by opening another terminal and running:
 
-```Bash
+```bash
 docker stop youtube-downloader-app
 ```
 
 You can later restart it if needed:
 
-```Bash
+```bash
 docker start youtube-downloader-app
 ```
 
+reconnect back to the container
 
+```bash
+docker exec -it youtube-downloader-app /bin/bash
+```
+
+```
+docker rm $(docker ps -aq -f status=exited)
+```
 
 **Features:**
 - ✨ Support for both single videos and playlists
