@@ -115,7 +115,7 @@ reconnect back to the container
 docker exec -it youtube-downloader-app /bin/bash
 ```
 
-```
+```bash
 docker rm $(docker ps -aq -f status=exited)
 ```
 
